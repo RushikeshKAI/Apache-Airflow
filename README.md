@@ -1,5 +1,12 @@
 # Apache-Airflow
-We will see Installation and implementation of code and provide to data-pipeline.
+We will see required Installation and implementation of Apache-Airflow setup.
+
+Prerequisites:
+    1. Python3+
+    2. Any IDE
+    3. VirtualBox(the latest version)
+    4. Virtual Machine(AirflowVM.ova)
+    5. Airflow
 
 **Apache Airflow:**
     Apache Airflow is an open-source platform to programmatically author, schedule and monitor workflows.
@@ -32,3 +39,10 @@ Task and Task Instance:
     It is in queue and ready to run(not yet started for execution).
     when the task is ready to run its task instance is created.
 
+
+**Note:**
+Airflow 2.1.2 doesn't support Celery 5 yet.
+    Long story short: just downgrade Celery provider:
+
+    > $ pip install --upgrade apache-airflow-providers-celery==2.0.0
+    It will resolve the flower UI service issue and worker also.
